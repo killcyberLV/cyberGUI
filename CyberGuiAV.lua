@@ -59,6 +59,8 @@ local JobId = game.JobId
 local noclip = false
 local fly = false
 local inf_jump = false
+local esp = false
+local godmode = false
 
 
 
@@ -66,7 +68,7 @@ local inf_jump = false
 local GUI_WIDHT = 300
 local GUI_HEIGHT = 300
 local GUI_NAME = "CyberGui"
-local GUI_VERSION = "5.0.0"
+local GUI_VERSION = "1.2"
 local GUI_AUTHOR = "BroomLegion"
 local GUI_LICENSE = "CyberGui Legion"
 local GUI_UPDATE_LOG = "Created the gui from scratch"
@@ -308,25 +310,21 @@ end
 
 
 -- create buttons
-local testButton = Instance.new("TextButton")
-testButton.Parent = MainScrollFrame
-testButton.Name = "TestButton"
-testButton.Size = UDim2.new(1, 0, 0.1, 0)
-testButton.Position = UDim2.new(0.05, 0, 0, 0)
-testButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-testButton.BackgroundTransparency = 0
-testButton.Text = "Test Button"
-testButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-testButton.TextSize = 14
-testButton.Font = Enum.Font.SourceSansBold
-testButton.TextXAlignment = Enum.TextXAlignment.Center
-testButton.TextYAlignment = Enum.TextYAlignment.Center
-testButton.AutoButtonColor = true
-testButton.BorderSizePixel = 0
-testButton.LayoutOrder = 1
-testButton.Activated:Connect(function()
-	print("Test Button Clicked")
-end)
+local tInfoGeneral = Instance.new("TextLabel")
+tInfoGeneral.Parent = MainScrollFrame
+tInfoGeneral.Name = "InfoGeneral"
+tInfoGeneral.Size = UDim2.new(1, 0, 0.1, 0)
+tInfoGeneral.Position = UDim2.new(0.05, 0, 0, 0)
+tInfoGeneral.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tInfoGeneral.BackgroundTransparency = 0.5
+tInfoGeneral.Text = "--- General ---"
+tInfoGeneral.TextColor3 = Color3.fromRGB(255, 255, 255)
+tInfoGeneral.TextSize = 14
+tInfoGeneral.Font = Enum.Font.SourceSansBold
+tInfoGeneral.TextXAlignment = Enum.TextXAlignment.Center
+tInfoGeneral.TextYAlignment = Enum.TextYAlignment.Center
+tInfoGeneral.BorderSizePixel = 0
+tInfoGeneral.LayoutOrder = 0
 
 local bnoclip = Instance.new("TextButton")
 bnoclip.Parent = MainScrollFrame
@@ -343,27 +341,94 @@ bnoclip.TextXAlignment = Enum.TextXAlignment.Center
 bnoclip.TextYAlignment = Enum.TextYAlignment.Center
 bnoclip.AutoButtonColor = true
 bnoclip.BorderSizePixel = 0
-bnoclip.LayoutOrder = 2
+bnoclip.LayoutOrder = 1
 bnoclip.Activated:Connect(function()
 	if noclip == true then
 		noclip = false
 		bnoclip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		print("Noclip")
 	else
 		noclip = true
-		bnoclip.BackgroundColor3 = Color3.fromRGB(209, 206, 255)
-		print("Noclip")
+		bnoclip.BackgroundColor3 = Color3.fromRGB(200, 200, 255)
 	end
 end)
 
+
+local bEsp = Instance.new("TextButton")
+bEsp.Parent = MainScrollFrame
+bEsp.Name = "Esp"
+bEsp.Size = UDim2.new(1, 0, 0.1, 0)
+bEsp.Position = UDim2.new(0.05, 0, 0, 0)
+bEsp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bEsp.BackgroundTransparency = 0
+bEsp.Text = "ESP"
+bEsp.TextColor3 = Color3.fromRGB(0, 0, 0)
+bEsp.TextSize = 14
+bEsp.Font = Enum.Font.SourceSansBold
+bEsp.TextXAlignment = Enum.TextXAlignment.Center
+bEsp.TextYAlignment = Enum.TextYAlignment.Center
+bEsp.AutoButtonColor = true
+bEsp.BorderSizePixel = 0
+bEsp.LayoutOrder = 1
+bEsp.Activated:Connect(function()
+	if esp == false then
+		esp = true
+		bEsp.BackgroundColor3 = Color3.fromRGB(200, 200, 255)
+	else
+		esp = false
+		bEsp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	end
+end)
+
+local bGodMode = Instance.new("TextButton")
+bGodMode.Parent = MainScrollFrame
+bGodMode.Name = "GodMode"
+bGodMode.Size = UDim2.new(1, 0, 0.1, 0)
+bGodMode.Position = UDim2.new(0.05, 0, 0, 0)
+bGodMode.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bGodMode.BackgroundTransparency = 0
+bGodMode.Text = "God Mode"
+bGodMode.TextColor3 = Color3.fromRGB(0, 0, 0)
+bGodMode.TextSize = 14
+bGodMode.Font = Enum.Font.SourceSansBold
+bGodMode.TextXAlignment = Enum.TextXAlignment.Center
+bGodMode.TextYAlignment = Enum.TextYAlignment.Center
+bGodMode.AutoButtonColor = true
+bGodMode.BorderSizePixel = 0
+bGodMode.LayoutOrder = 1
+bGodMode.Activated:Connect(function()
+	if godmode == false then
+		godmode = true
+		bGodMode.BackgroundColor3 = Color3.fromRGB(200, 200, 255)
+	else
+		godmode = false
+		bGodMode.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	end
+end)
+
+local tInfoGui = Instance.new("TextLabel")
+tInfoGui.Parent = MainScrollFrame
+tInfoGui.Name = "InfoGeneral"
+tInfoGui.Size = UDim2.new(1, 0, 0.1, 0)
+tInfoGui.Position = UDim2.new(0.05, 0, 0, 0)
+tInfoGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tInfoGui.BackgroundTransparency = 0.5
+tInfoGui.Text = "--- Gui ---"
+tInfoGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+tInfoGui.TextSize = 14
+tInfoGui.Font = Enum.Font.SourceSansBold
+tInfoGui.TextXAlignment = Enum.TextXAlignment.Center
+tInfoGui.TextYAlignment = Enum.TextYAlignment.Center
+tInfoGui.BorderSizePixel = 0
+tInfoGui.LayoutOrder = 2
+
 local tpguib = Instance.new("TextButton")
 tpguib.Parent = MainScrollFrame
-tpguib.Name = "TpGui"
+tpguib.Name = "openTpGui"
 tpguib.Size = UDim2.new(1, 0, 0.1, 0)
 tpguib.Position = UDim2.new(0.05, 0, 0, 0)
 tpguib.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 tpguib.BackgroundTransparency = 0
-tpguib.Text = "Tp Gui"
+tpguib.Text = "Open Tp Gui"
 tpguib.TextColor3 = Color3.fromRGB(0, 0, 0)
 tpguib.TextSize = 14
 tpguib.Font = Enum.Font.SourceSansBold
@@ -371,34 +436,170 @@ tpguib.TextXAlignment = Enum.TextXAlignment.Center
 tpguib.TextYAlignment = Enum.TextYAlignment.Center
 tpguib.AutoButtonColor = true
 tpguib.BorderSizePixel = 0
-tpguib.LayoutOrder = 3
+tpguib.LayoutOrder = 2
 tpguib.Activated:Connect(function()
 	tpgui()
 end)
 
+local bCyberGui1 = Instance.new("TextButton")
+bCyberGui1.Parent = MainScrollFrame
+bCyberGui1.Name = "openCyberGui1"
+bCyberGui1.Size = UDim2.new(1, 0, 0.1, 0)
+bCyberGui1.Position = UDim2.new(0.05, 0, 0, 0)
+bCyberGui1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bCyberGui1.BackgroundTransparency = 0
+bCyberGui1.Text = "Open Cyber Gui 1"
+bCyberGui1.TextColor3 = Color3.fromRGB(0, 0, 0)
+bCyberGui1.TextSize = 14
+bCyberGui1.Font = Enum.Font.SourceSansBold
+bCyberGui1.TextXAlignment = Enum.TextXAlignment.Center
+bCyberGui1.TextYAlignment = Enum.TextYAlignment.Center
+bCyberGui1.AutoButtonColor = true
+bCyberGui1.BorderSizePixel = 0
+bCyberGui1.LayoutOrder = 2
+bCyberGui1.Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/killcyberLV/cyberGUI/main/CyberGui1.lua", true))()
+end)
+
+local bCoolClanGui = Instance.new("TextButton")
+bCoolClanGui.Parent = MainScrollFrame
+bCoolClanGui.Name = "openCoolClanGui"
+bCoolClanGui.Size = UDim2.new(1, 0, 0.1, 0)
+bCoolClanGui.Position = UDim2.new(0.05, 0, 0, 0)
+bCoolClanGui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bCoolClanGui.BackgroundTransparency = 0
+bCoolClanGui.Text = "Open Cool Clan Gui"
+bCoolClanGui.TextColor3 = Color3.fromRGB(0, 0, 0)
+bCoolClanGui.TextSize = 14
+bCoolClanGui.Font = Enum.Font.SourceSansBold
+bCoolClanGui.TextXAlignment = Enum.TextXAlignment.Center
+bCoolClanGui.TextYAlignment = Enum.TextYAlignment.Center
+bCoolClanGui.AutoButtonColor = true
+bCoolClanGui.BorderSizePixel = 0
+bCoolClanGui.LayoutOrder = 2
+bCoolClanGui.Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cfsmi2/c00lguiv1/refs/heads/main/Main.lua", true))()
+end)
+
+local bKnifeGrab = Instance.new("TextButton")
+bKnifeGrab.Parent = MainScrollFrame
+bKnifeGrab.Name = "getKnifeGrab"
+bKnifeGrab.Size = UDim2.new(1, 0, 0.1, 0)
+bKnifeGrab.Position = UDim2.new(0.05, 0, 0, 0)
+bKnifeGrab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bKnifeGrab.BackgroundTransparency = 0
+bKnifeGrab.Text = "Open Knife Grab"
+bKnifeGrab.TextColor3 = Color3.fromRGB(0, 0, 0)
+bKnifeGrab.TextSize = 14
+bKnifeGrab.Font = Enum.Font.SourceSansBold
+bKnifeGrab.TextXAlignment = Enum.TextXAlignment.Center
+bKnifeGrab.TextYAlignment = Enum.TextYAlignment.Center
+bKnifeGrab.AutoButtonColor = true
+bKnifeGrab.BorderSizePixel = 0
+bKnifeGrab.LayoutOrder = 2
+bKnifeGrab.Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/KenzoSSto1/GRAB-KNIFE-V4/refs/heads/main/grabknife.txt"))()
+end)
+
+local bCoolGuiV3 = Instance.new("TextButton")
+bCoolGuiV3.Parent = MainScrollFrame
+bCoolGuiV3.Name = "openCoolGuiV3"
+bCoolGuiV3.Size = UDim2.new(1, 0, 0.1, 0)
+bCoolGuiV3.Position = UDim2.new(0.05, 0, 0, 0)
+bCoolGuiV3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bCoolGuiV3.BackgroundTransparency = 0
+bCoolGuiV3.Text = "Open Cool Gui V3"
+bCoolGuiV3.TextColor3 = Color3.fromRGB(0, 0, 0)
+bCoolGuiV3.TextSize = 14
+bCoolGuiV3.Font = Enum.Font.SourceSansBold
+bCoolGuiV3.TextXAlignment = Enum.TextXAlignment.Center
+bCoolGuiV3.TextYAlignment = Enum.TextYAlignment.Center
+bCoolGuiV3.AutoButtonColor = true
+bCoolGuiV3.BorderSizePixel = 0
+bCoolGuiV3.LayoutOrder = 2
+bCoolGuiV3.Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/hyperionhax/c00lgui/refs/heads/main/CoolGui.lua"))()
+end)
 
 
 -- loops
-game:GetService("RunService").RenderStepped:Connect(function()
-	game:GetService("RunService").Stepped:Connect(function()
-		if noclip == true then
-			local char = player.Character
-			if char then
-				for _, part in pairs(char:GetDescendants()) do
-					if part:IsA("BasePart") then
-						part.CanCollide = false
-					end
+while true do
+	wait()
+	if noclip == true then
+		local char = player.Character
+		if char then
+			for _, part in pairs(char:GetDescendants()) do
+				if part:IsA("BasePart") then
+					part.CanCollide = false
 				end
 			end
-		else
-			local char = player.Character
-			if char then
-				for _, part in pairs(char:GetDescendants()) do
-					if part:IsA("BasePart") then
-						part.CanCollide = true
+		end
+	else
+		local char = player.Character
+		if char then
+			for _, part in pairs(char:GetDescendants()) do
+				if part:IsA("BasePart") then
+					part.CanCollide = true
+				end
+			end
+		end
+	end
+	
+	if esp == true then
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player.Character then
+				local head = player.Character:FindFirstChild("Head")
+				if head then
+					local billboardGui = Instance.new("BillboardGui")
+					billboardGui.Size = UDim2.new(0, 100, 0, 50)
+					billboardGui.StudsOffset = Vector3.new(0, 2, 0)
+					billboardGui.AlwaysOnTop = true
+					billboardGui.Parent = head
+					local textLabel = Instance.new("TextLabel")
+					textLabel.Size = UDim2.new(1, 0, 1, 0)
+					textLabel.BackgroundTransparency = 1
+					textLabel.Text = player.Name
+					textLabel.TextColor3 = Color3.new(1, 1, 1)
+					textLabel.TextStrokeTransparency = 0.5
+					textLabel.Font = Enum.Font.SourceSansBold
+					textLabel.TextSize = 18
+					textLabel.Parent = billboardGui
+				end
+			end
+		end
+	else
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player.Character then
+				local head = player.Character:FindFirstChild("Head")
+				if head then
+					for _, child in pairs(head:GetChildren()) do
+						if child:IsA("BillboardGui") then
+							child:Destroy()
+						end
 					end
 				end
 			end
 		end
-	end)
-end)
+	end
+	if godmode == true then
+		-- infinit health
+		local char = player.Character
+		if char then
+			local humanoid = char:FindFirstChild("Humanoid")
+			if humanoid then
+				humanoid.MaxHealth = math.huge
+				humanoid.Health = math.huge
+			end
+		end
+	else
+		-- normal health
+		local char = player.Character
+		if char then
+			local humanoid = char:FindFirstChild("Humanoid")
+			if humanoid then
+				humanoid.MaxHealth = 100
+				humanoid.Health = 100
+			end
+		end
+	end
+end
