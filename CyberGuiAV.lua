@@ -68,11 +68,11 @@ local godmode = false
 local GUI_WIDHT = 300
 local GUI_HEIGHT = 300
 local GUI_NAME = "CyberGui"
-local GUI_VERSION = "1.3"
+local GUI_VERSION = "1.3.1"
 local GUI_AUTHOR = "BroomLegion"
 local GUI_LICENSE = "CyberGui Legion"
 local GUI_UPDATE_LOG = "Created the gui from scratch"
-local GUI_UPDATE_DATE = "2026-sat-25-apr"
+local GUI_UPDATE_DATE = "2026-sun-26-apr"
 local GUI_UPDATE_AUTHOR = "BroomLegion"
 local GUI_UPDATE_LICENSE = "CyberGui Legion"
 local DISCORD_SERVER = "https://discord.gg/pKuFnunr2"
@@ -307,6 +307,182 @@ local function tpgui()
 	end)
 end
 
+function controlgui()
+	local cdragframe = Instance.new("Frame")
+	cdragframe.Parent = mainGui
+	cdragframe.Name = "CdragFrame"
+	cdragframe.Size = UDim2.new(0.2, 0, 0.3, 0)
+	cdragframe.BackgroundTransparency = 1
+	
+	local cdrag = Instance.new("UIDragDetector")
+	cdrag.Parent = cdragframe
+	
+	local controlframmain = Instance.new("ScrollingFrame")
+	controlframmain.Parent = cdragframe
+	controlframmain.Name = "ControlFrame"
+	controlframmain.Size = UDim2.new(1, 0, 1, 0)
+	controlframmain.Position = UDim2.new(0, 0, 0.1, 0)
+	controlframmain.BackgroundTransparency = 0.5
+	controlframmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	controlframmain.BorderSizePixel = 0
+	controlframmain.ScrollBarThickness = 10
+	controlframmain.CanvasSize = UDim2.new(0, 0, 1, 0)
+	controlframmain.ScrollingDirection = Enum.ScrollingDirection.Y
+	controlframmain.Active = true
+	
+	local cround = Instance.new("UICorner")
+	cround.Parent = controlframmain
+	cround.CornerRadius = UDim.new(0, 10)
+	
+	local cuilist = Instance.new("UIListLayout")
+	cuilist.Parent = controlframmain
+	cuilist.SortOrder = Enum.SortOrder.LayoutOrder
+	cuilist.Padding = UDim.new(0, 5)
+	cuilist.VerticalAlignment = Enum.VerticalAlignment.Top
+	cuilist.HorizontalAlignment = Enum.HorizontalAlignment.Left
+	
+	local cclose = Instance.new("TextButton")
+	cclose.Parent = controlframmain
+	cclose.Name = "Close"
+	cclose.Size = UDim2.new(0.2, 0, 0.1, 0)
+	cclose.Position = UDim2.new(0.1, 0.1, 0, 0)
+	cclose.Text = "close"
+	cclose.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cclose.Font = Enum.Font.SourceSansBold
+	cclose.BorderSizePixel = 0
+	cclose.TextSize = 14
+	cclose.Activated:Connect(function()
+		controlframmain:Destroy()
+	end)
+	
+	local cplayerspeedp10 = Instance.new("TextButton")
+	cplayerspeedp10.Parent = controlframmain
+	cplayerspeedp10.Name = "PlayerSpeedP10"
+	cplayerspeedp10.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerspeedp10.Position = UDim2.new(0.1, 0, 0.1, 0)
+	cplayerspeedp10.BackgroundTransparency = 0
+	cplayerspeedp10.Text = "Player Speed +10"
+	cplayerspeedp10.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerspeedp10.TextSize = 14
+	cplayerspeedp10.Font = Enum.Font.SourceSansBold
+	cplayerspeedp10.AutoButtonColor = true
+	cplayerspeedp10.BorderSizePixel = 0
+	cplayerspeedp10.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed + 10
+	end)
+	
+	local cplayerspeedm10 = Instance.new("TextButton")
+	cplayerspeedm10.Parent = controlframmain
+	cplayerspeedm10.Name = "PlayerSpeedM10"
+	cplayerspeedm10.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerspeedm10.Position = UDim2.new(0.3, 0, 0.1, 0)
+	cplayerspeedm10.BackgroundTransparency = 0
+	cplayerspeedm10.Text = "Player Speed -10"
+	cplayerspeedm10.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerspeedm10.TextSize = 14
+	cplayerspeedm10.Font = Enum.Font.SourceSansBold
+	cplayerspeedm10.AutoButtonColor = true
+	cplayerspeedm10.BorderSizePixel = 0
+	cplayerspeedm10.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed - 10
+	end)
+	
+	local cplayerspeedp100 = Instance.new("TextButton")
+	cplayerspeedp100.Parent = controlframmain
+	cplayerspeedp100.Name = "PlayerSpeedP100"
+	cplayerspeedp100.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerspeedp100.Position = UDim2.new(0.5, 0, 0.1, 0)
+	cplayerspeedp100.BackgroundTransparency = 0
+	cplayerspeedp100.Text = "Player Speed +100"
+	cplayerspeedp100.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerspeedp100.TextSize = 14
+	cplayerspeedp100.Font = Enum.Font.SourceSansBold
+	cplayerspeedp100.AutoButtonColor = true
+	cplayerspeedp100.BorderSizePixel = 0
+	cplayerspeedp100.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed + 100
+	end)
+	
+	local cplayerspeedm100 = Instance.new("TextButton")
+	cplayerspeedm100.Parent = controlframmain
+	cplayerspeedm100.Name = "PlayerSpeedM100"
+	cplayerspeedm100.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerspeedm100.Position = UDim2.new(0.7, 0, 0.1, 0)
+	cplayerspeedm100.BackgroundTransparency = 0
+	cplayerspeedm100.Text = "Player Speed -100"
+	cplayerspeedm100.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerspeedm100.TextSize = 14
+	cplayerspeedm100.Font = Enum.Font.SourceSansBold
+	cplayerspeedm100.AutoButtonColor = true
+	cplayerspeedm100.BorderSizePixel = 0
+	cplayerspeedm100.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed - 100
+	end)
+	
+	local cplayerspeeds16 = Instance.new("TextButton")
+	cplayerspeeds16.Parent = controlframmain
+	cplayerspeeds16.Name = "PlayerSpeedS16"
+	cplayerspeeds16.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerspeeds16.Position = UDim2.new(0.1, 0, 0.2, 0)
+	cplayerspeeds16.BackgroundTransparency = 0
+	cplayerspeeds16.Text = "Player Speed =16"
+	cplayerspeeds16.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerspeeds16.TextSize = 14
+	cplayerspeeds16.Font = Enum.Font.SourceSansBold
+	cplayerspeeds16.AutoButtonColor = true
+	cplayerspeeds16.BorderSizePixel = 0
+	cplayerspeeds16.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+	end)
+	
+	local cplayerspeeds30 = Instance.new("TextButton")
+	cplayerspeeds30.Parent = controlframmain
+	cplayerspeeds30.Name = "PlayerSpeedS30"
+	cplayerspeeds30.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerspeeds30.Position = UDim2.new(0.3, 0, 0.2, 0)
+	cplayerspeeds30.BackgroundTransparency = 0
+	cplayerspeeds30.Text = "Player Speed =30"
+	cplayerspeeds30.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerspeeds30.TextSize = 14
+	cplayerspeeds30.Font = Enum.Font.SourceSansBold
+	cplayerspeeds30.AutoButtonColor = true
+	cplayerspeeds30.BorderSizePixel = 0
+	cplayerspeeds30.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
+	end)
+	
+	local cplayerjumpp10 = Instance.new("TextButton")
+	cplayerjumpp10.Parent = controlframmain
+	cplayerjumpp10.Name = "PlayerJumpP10"
+	cplayerjumpp10.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerjumpp10.Position = UDim2.new(0.5, 0, 0.2, 0)
+	cplayerjumpp10.BackgroundTransparency = 0
+	cplayerjumpp10.Text = "Player Jump +10"
+	cplayerjumpp10.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerjumpp10.TextSize = 14
+	cplayerjumpp10.Font = Enum.Font.SourceSansBold
+	cplayerjumpp10.AutoButtonColor = true
+	cplayerjumpp10.BorderSizePixel = 0
+	cplayerjumpp10.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower + 10
+	end)
+	
+	local cplayerjumpm10 = Instance.new("TextButton")
+	cplayerjumpm10.Parent = controlframmain
+	cplayerjumpm10.Name = "PlayerJumpM10"
+	cplayerjumpm10.Size = UDim2.new(1, 0, 0.1, 0)
+	cplayerjumpm10.Position = UDim2.new(0.7, 0, 0.2, 0)
+	cplayerjumpm10.BackgroundTransparency = 0
+	cplayerjumpm10.Text = "Player Jump -10"
+	cplayerjumpm10.TextColor3 = Color3.fromRGB(0, 0, 0)
+	cplayerjumpm10.TextSize = 14
+	cplayerjumpm10.Font = Enum.Font.SourceSansBold
+	cplayerjumpm10.AutoButtonColor = true
+	cplayerjumpm10.BorderSizePixel = 0
+	cplayerjumpm10.Activated:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = game.Players.LocalPlayer.Character.Humanoid.JumpPower - 10
+	end)
+end
 
 
 -- create buttons
@@ -405,21 +581,21 @@ bGodMode.Activated:Connect(function()
 	end
 end)
 
-local tInfoGui = Instance.new("TextLabel")
-tInfoGui.Parent = MainScrollFrame
-tInfoGui.Name = "InfoGeneral"
-tInfoGui.Size = UDim2.new(1, 0, 0.1, 0)
-tInfoGui.Position = UDim2.new(0.05, 0, 0, 0)
-tInfoGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-tInfoGui.BackgroundTransparency = 0.5
-tInfoGui.Text = "--- Gui ---"
-tInfoGui.TextColor3 = Color3.fromRGB(255, 255, 255)
-tInfoGui.TextSize = 14
-tInfoGui.Font = Enum.Font.SourceSansBold
-tInfoGui.TextXAlignment = Enum.TextXAlignment.Center
-tInfoGui.TextYAlignment = Enum.TextYAlignment.Center
-tInfoGui.BorderSizePixel = 0
-tInfoGui.LayoutOrder = 2
+local tInfoorGui = Instance.new("TextLabel")
+tInfoorGui.Parent = MainScrollFrame
+tInfoorGui.Name = "InfoGeneral"
+tInfoorGui.Size = UDim2.new(1, 0, 0.1, 0)
+tInfoorGui.Position = UDim2.new(0.05, 0, 0, 0)
+tInfoorGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tInfoorGui.BackgroundTransparency = 0.5
+tInfoorGui.Text = "--- OriginalGui ---"
+tInfoorGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+tInfoorGui.TextSize = 14
+tInfoorGui.Font = Enum.Font.SourceSansBold
+tInfoorGui.TextXAlignment = Enum.TextXAlignment.Center
+tInfoorGui.TextYAlignment = Enum.TextYAlignment.Center
+tInfoorGui.BorderSizePixel = 0
+tInfoorGui.LayoutOrder = 2
 
 local tpguib = Instance.new("TextButton")
 tpguib.Parent = MainScrollFrame
@@ -441,6 +617,42 @@ tpguib.Activated:Connect(function()
 	tpgui()
 end)
 
+local bContrlgui = Instance.new("TextButton")
+bContrlgui.Parent = MainScrollFrame
+bContrlgui.Name = "openContrlGui"
+bContrlgui.Size = UDim2.new(1, 0, 0.1, 0)
+bContrlgui.Position = UDim2.new(0.05, 0, 0, 0)
+bContrlgui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bContrlgui.BackgroundTransparency = 0
+bContrlgui.Text = "Open Controls Gui"
+bContrlgui.TextColor3 = Color3.fromRGB(0, 0, 0)
+bContrlgui.TextSize = 14
+bContrlgui.Font = Enum.Font.SourceSansBold
+bContrlgui.TextXAlignment = Enum.TextXAlignment.Center
+bContrlgui.TextYAlignment = Enum.TextYAlignment.Center
+bContrlgui.AutoButtonColor = true
+bContrlgui.BorderSizePixel = 0
+bContrlgui.LayoutOrder = 2
+bContrlgui.Activated:Connect(function()
+	controlgui()
+end)
+
+local tInfoGui = Instance.new("TextLabel")
+tInfoGui.Parent = MainScrollFrame
+tInfoGui.Name = "InfoGeneral"
+tInfoGui.Size = UDim2.new(1, 0, 0.1, 0)
+tInfoGui.Position = UDim2.new(0.05, 0, 0, 0)
+tInfoGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tInfoGui.BackgroundTransparency = 0.5
+tInfoGui.Text = "--- Gui ---"
+tInfoGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+tInfoGui.TextSize = 14
+tInfoGui.Font = Enum.Font.SourceSansBold
+tInfoGui.TextXAlignment = Enum.TextXAlignment.Center
+tInfoGui.TextYAlignment = Enum.TextYAlignment.Center
+tInfoGui.BorderSizePixel = 0
+tInfoGui.LayoutOrder = 3
+
 local bCyberGui1 = Instance.new("TextButton")
 bCyberGui1.Parent = MainScrollFrame
 bCyberGui1.Name = "openCyberGui1"
@@ -456,7 +668,7 @@ bCyberGui1.TextXAlignment = Enum.TextXAlignment.Center
 bCyberGui1.TextYAlignment = Enum.TextYAlignment.Center
 bCyberGui1.AutoButtonColor = true
 bCyberGui1.BorderSizePixel = 0
-bCyberGui1.LayoutOrder = 2
+bCyberGui1.LayoutOrder = 3
 bCyberGui1.Activated:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/killcyberLV/cyberGUI/main/CyberGui1.lua", true))()
 end)
@@ -476,7 +688,7 @@ bCoolClanGui.TextXAlignment = Enum.TextXAlignment.Center
 bCoolClanGui.TextYAlignment = Enum.TextYAlignment.Center
 bCoolClanGui.AutoButtonColor = true
 bCoolClanGui.BorderSizePixel = 0
-bCoolClanGui.LayoutOrder = 2
+bCoolClanGui.LayoutOrder = 3
 bCoolClanGui.Activated:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/cfsmi2/c00lguiv1/refs/heads/main/Main.lua", true))()
 end)
@@ -496,7 +708,7 @@ bKnifeGrab.TextXAlignment = Enum.TextXAlignment.Center
 bKnifeGrab.TextYAlignment = Enum.TextYAlignment.Center
 bKnifeGrab.AutoButtonColor = true
 bKnifeGrab.BorderSizePixel = 0
-bKnifeGrab.LayoutOrder = 2
+bKnifeGrab.LayoutOrder = 3
 bKnifeGrab.Activated:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/KenzoSSto1/GRAB-KNIFE-V4/refs/heads/main/grabknife.txt"))()
 end)
@@ -516,7 +728,7 @@ bCoolGuiV3.TextXAlignment = Enum.TextXAlignment.Center
 bCoolGuiV3.TextYAlignment = Enum.TextYAlignment.Center
 bCoolGuiV3.AutoButtonColor = true
 bCoolGuiV3.BorderSizePixel = 0
-bCoolGuiV3.LayoutOrder = 2
+bCoolGuiV3.LayoutOrder = 3
 bCoolGuiV3.Activated:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/hyperionhax/c00lgui/refs/heads/main/CoolGui.lua"))()
 end)
