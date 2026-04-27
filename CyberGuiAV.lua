@@ -28,6 +28,9 @@ text.Visible = false
 
 --Services
 local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+local player = Players.LocalPlayer
+local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local PlayerGui = Player:WaitForChild("PlayerGui")
 local UserInputService = game:GetService("UserInputService")
@@ -51,6 +54,7 @@ local SoundService = game:GetService("SoundService")
 local player = Player
 local PlaceId = game.PlaceId
 local JobId = game.JobId
+local cam = workspace.CurrentCamera
 
 
 
@@ -64,15 +68,16 @@ local godmode = false
 
 
 
+
 --settings
 local GUI_WIDHT = 300
 local GUI_HEIGHT = 300
 local GUI_NAME = "CyberGui"
-local GUI_VERSION = "1.3.1"
+local GUI_VERSION = "1.3.2"
 local GUI_AUTHOR = "BroomLegion"
 local GUI_LICENSE = "CyberGui Legion"
-local GUI_UPDATE_LOG = "Created the gui from scratch"
-local GUI_UPDATE_DATE = "2026-sun-26-apr"
+local GUI_UPDATE_LOG = "Added control gui, inf jump and discord link"
+local GUI_UPDATE_DATE = "2026-mon-27-apr"
 local GUI_UPDATE_AUTHOR = "BroomLegion"
 local GUI_UPDATE_LICENSE = "CyberGui Legion"
 local DISCORD_SERVER = "https://discord.gg/pKuFnunr2"
@@ -485,7 +490,33 @@ function controlgui()
 end
 
 
+
+
 -- create buttons
+
+local bDiscord = Instance.new("TextButton")
+bDiscord.Parent = MainScrollFrame
+bDiscord.Name = "GetDiscordLink"
+bDiscord.Size = UDim2.new(1, 0, 0.1, 0)
+bDiscord.Position = UDim2.new(0.05, 0, 0.1, 0)
+bDiscord.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+bDiscord.BackgroundTransparency = 0
+bDiscord.Text = "Get Discord Link"
+bDiscord.TextColor3 = Color3.fromRGB(0, 0, 0)
+bDiscord.TextSize = 14
+bDiscord.Font = Enum.Font.SourceSansBold
+bDiscord.TextXAlignment = Enum.TextXAlignment.Center
+bDiscord.TextYAlignment = Enum.TextYAlignment.Center
+bDiscord.AutoButtonColor = true
+bDiscord.BorderSizePixel = 0
+bDiscord.LayoutOrder = -1
+bDiscord.Activated:Connect(function()
+	bDiscord.Text = "Discord Link Is ::: ".. DISCORD_SERVER
+	wait(3)
+	bDiscord.Text = "Copy Discord Link"
+end)
+
+
 local tInfoGeneral = Instance.new("TextLabel")
 tInfoGeneral.Parent = MainScrollFrame
 tInfoGeneral.Name = "InfoGeneral"
@@ -578,6 +609,32 @@ bGodMode.Activated:Connect(function()
 	else
 		godmode = false
 		bGodMode.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	end
+end)
+
+local bInfJump = Instance.new("TextButton")
+bInfJump.Parent = MainScrollFrame
+bInfJump.Name = "Fly"
+bInfJump.Size = UDim2.new(1, 0, 0.1, 0)
+bInfJump.Position = UDim2.new(0.05, 0, 0, 0)
+bInfJump.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bInfJump.BackgroundTransparency = 0
+bInfJump.Text = "Infinite Jump"
+bInfJump.TextColor3 = Color3.fromRGB(0, 0, 0)
+bInfJump.TextSize = 14
+bInfJump.Font = Enum.Font.SourceSansBold
+bInfJump.TextXAlignment = Enum.TextXAlignment.Center
+bInfJump.TextYAlignment = Enum.TextYAlignment.Center
+bInfJump.AutoButtonColor = true
+bInfJump.BorderSizePixel = 0
+bInfJump.LayoutOrder = 1
+bInfJump.Activated:Connect(function()
+	if inf_jump == false then
+		inf_jump = true
+		bInfJump.BackgroundColor3 = Color3.fromRGB(200, 200, 255)
+	else
+		inf_jump = false
+		bInfJump.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	end
 end)
 
@@ -813,5 +870,15 @@ while true do
 				humanoid.Health = 100
 			end
 		end
+	end
+	
+	if inf_jump == true then
+		UIS.JumpRequest:Connect(function()
+			local char = player.Character
+			if not char then return end
+			local humanoid = char:FindFirstChildOfClass("Humanoid")
+			if not humanoid then return end
+			humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+		end)
 	end
 end
