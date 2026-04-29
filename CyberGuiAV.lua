@@ -73,10 +73,10 @@ local godmode = false
 local GUI_WIDHT = 300
 local GUI_HEIGHT = 300
 local GUI_NAME = "CyberGui"
-local GUI_VERSION = "1.3.2"
+local GUI_VERSION = "1.5.1"
 local GUI_AUTHOR = "BroomLegion"
 local GUI_LICENSE = "CyberGui Legion"
-local GUI_UPDATE_LOG = "Added control gui, inf jump and discord link"
+local GUI_UPDATE_LOG = "Added a lot"
 local GUI_UPDATE_DATE = "2026-mon-27-apr"
 local GUI_UPDATE_AUTHOR = "BroomLegion"
 local GUI_UPDATE_LICENSE = "CyberGui Legion"
@@ -559,6 +559,25 @@ bnoclip.Activated:Connect(function()
 	end
 end)
 
+local bFly = Instance.new("TextButton")
+bFly.Parent = MainScrollFrame
+bFly.Name = "Fly"
+bFly.Size = UDim2.new(1, 0, 0.1, 0)
+bFly.Position = UDim2.new(0.05, 0, 0, 0)
+bFly.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bFly.BackgroundTransparency = 0
+bFly.Text = "Fly"
+bFly.TextColor3 = Color3.fromRGB(0, 0, 0)
+bFly.TextSize = 14
+bFly.Font = Enum.Font.SourceSansBold
+bFly.TextXAlignment = Enum.TextXAlignment.Center
+bFly.TextYAlignment = Enum.TextYAlignment.Center
+bFly.AutoButtonColor = true
+bFly.BorderSizePixel = 0
+bFly.LayoutOrder = 1
+bFly.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Fly.lua"))()
+end)
 
 local bEsp = Instance.new("TextButton")
 bEsp.Parent = MainScrollFrame
@@ -584,6 +603,26 @@ bEsp.Activated:Connect(function()
 		esp = false
 		bEsp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	end
+end)
+
+local bAimbot = Instance.new("TextButton")
+bAimbot.Parent = MainScrollFrame
+bAimbot.Name = "Aimbot"
+bAimbot.Size = UDim2.new(1, 0, 0.1, 0)
+bAimbot.Position = UDim2.new(0.05, 0, 0, 0)
+bAimbot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bAimbot.BackgroundTransparency = 0
+bAimbot.Text = "Aimbot"
+bAimbot.TextColor3 = Color3.fromRGB(0, 0, 0)
+bAimbot.TextSize = 14
+bAimbot.Font = Enum.Font.SourceSansBold
+bAimbot.TextXAlignment = Enum.TextXAlignment.Center
+bAimbot.TextYAlignment = Enum.TextYAlignment.Center
+bAimbot.AutoButtonColor = true
+bAimbot.BorderSizePixel = 0
+bAimbot.LayoutOrder = 1
+bAimbot.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/s/610067c537cd63b05ca78e6c.lua"))()
 end)
 
 local bGodMode = Instance.new("TextButton")
@@ -636,6 +675,242 @@ bInfJump.Activated:Connect(function()
 		inf_jump = false
 		bInfJump.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	end
+end)
+
+local bFling = Instance.new("TextButton")
+bFling.Parent = MainScrollFrame
+bFling.Name = "Fling"
+bFling.Size = UDim2.new(1, 0, 0.1, 0)
+bFling.Position = UDim2.new(0.05, 0, 0, 0)
+bFling.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bFling.BackgroundTransparency = 0
+bFling.Text = "Fling"
+bFling.TextColor3 = Color3.fromRGB(0, 0, 0)
+bFling.TextSize = 14
+bFling.Font = Enum.Font.SourceSansBold
+bFling.TextXAlignment = Enum.TextXAlignment.Center
+bFling.TextYAlignment = Enum.TextYAlignment.Center
+bFling.AutoButtonColor = true
+bFling.BorderSizePixel = 0
+bFling.LayoutOrder = 1
+bFling.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/s/6974384c0385f7a2505370a4.lua"))()
+end)
+
+local bDexExplorer = Instance.new("TextButton")
+bDexExplorer.Parent = MainScrollFrame
+bDexExplorer.Name = "DexExplorer"
+bDexExplorer.Size = UDim2.new(1, 0, 0.1, 0)
+bDexExplorer.Position = UDim2.new(0.05, 0, 0, 0)
+bDexExplorer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bDexExplorer.BackgroundTransparency = 0
+bDexExplorer.Text = "Open Dex Explorer"
+bDexExplorer.TextColor3 = Color3.fromRGB(0, 0, 0)
+bDexExplorer.TextSize = 14
+bDexExplorer.Font = Enum.Font.SourceSansBold
+bDexExplorer.TextXAlignment = Enum.TextXAlignment.Center
+bDexExplorer.TextYAlignment = Enum.TextYAlignment.Center
+bDexExplorer.AutoButtonColor = true
+bDexExplorer.BorderSizePixel = 0
+bDexExplorer.LayoutOrder = 1
+bDexExplorer.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Dex%20Explorer.lua"))()
+end)
+
+local tInfoorGames = Instance.new("TextLabel")
+tInfoorGames.Parent = MainScrollFrame
+tInfoorGames.Name = "InfoGeneral"
+tInfoorGames.Size = UDim2.new(1, 0, 0.1, 0)
+tInfoorGames.Position = UDim2.new(0.05, 0, 0, 0)
+tInfoorGames.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+tInfoorGames.BackgroundTransparency = 0.5
+tInfoorGames.Text = "--- Specifique Games Scripte ---"
+tInfoorGames.TextColor3 = Color3.fromRGB(255, 255, 255)
+tInfoorGames.TextSize = 14
+tInfoorGames.Font = Enum.Font.SourceSansBold
+tInfoorGames.TextXAlignment = Enum.TextXAlignment.Center
+tInfoorGames.TextYAlignment = Enum.TextYAlignment.Center
+tInfoorGames.BorderSizePixel = 0
+tInfoorGames.LayoutOrder = 1.5
+
+local b99Night = Instance.new("TextButton")
+b99Night.Parent = MainScrollFrame
+b99Night.Name = "99Night"
+b99Night.Size = UDim2.new(1, 0, 0.1, 0)
+b99Night.Position = UDim2.new(0.05, 0, 0, 0)
+b99Night.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+b99Night.BackgroundTransparency = 0
+b99Night.Text = "99 Night"
+b99Night.TextColor3 = Color3.fromRGB(0, 0, 0)
+b99Night.TextSize = 14
+b99Night.Font = Enum.Font.SourceSansBold
+b99Night.TextXAlignment = Enum.TextXAlignment.Center
+b99Night.TextYAlignment = Enum.TextYAlignment.Center
+b99Night.AutoButtonColor = true
+b99Night.BorderSizePixel = 0
+b99Night.LayoutOrder = 1.5
+b99Night.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/203720/scripts/99%20nights%20in%20a%20forest%20voidware.lua"))()
+end)
+
+local b99nightwood = Instance.new("TextButton")
+b99nightwood.Parent = MainScrollFrame
+b99nightwood.Name = "99nightwood"
+b99nightwood.Size = UDim2.new(1, 0, 0.1, 0)
+b99nightwood.Position = UDim2.new(0.05, 0, 0, 0)
+b99nightwood.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+b99nightwood.BackgroundTransparency = 0
+b99nightwood.Text = "99 Night Wood Farmer"
+b99nightwood.TextColor3 = Color3.fromRGB(0, 0, 0)
+b99nightwood.TextSize = 14
+b99nightwood.Font = Enum.Font.SourceSansBold
+b99nightwood.TextXAlignment = Enum.TextXAlignment.Center
+b99nightwood.TextYAlignment = Enum.TextYAlignment.Center
+b99nightwood.AutoButtonColor = true
+b99nightwood.BorderSizePixel = 0
+b99nightwood.LayoutOrder = 1.5
+b99nightwood.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/203209/scripts/wood%20farmer%2099%20nigths.lua"))()
+end)
+
+local b99nightvoidware = Instance.new("TextButton")
+b99nightvoidware.Parent = MainScrollFrame
+b99nightvoidware.Name = "99nightvoidware"
+b99nightvoidware.Size = UDim2.new(1, 0, 0.1, 0)
+b99nightvoidware.Position = UDim2.new(0.05, 0, 0, 0)
+b99nightvoidware.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+b99nightvoidware.BackgroundTransparency = 0
+b99nightvoidware.Text = "99 Night Voidware"
+b99nightvoidware.TextColor3 = Color3.fromRGB(0, 0, 0)
+b99nightvoidware.TextSize = 14
+b99nightvoidware.Font = Enum.Font.SourceSansBold
+b99nightvoidware.TextXAlignment = Enum.TextXAlignment.Center
+b99nightvoidware.TextYAlignment = Enum.TextYAlignment.Center
+b99nightvoidware.AutoButtonColor = true
+b99nightvoidware.BorderSizePixel = 0
+b99nightvoidware.LayoutOrder = 1.5
+b99nightvoidware.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/204204/scripts/Voidware.lua"))()
+end)
+
+local bmm2 = Instance.new("TextButton")
+bmm2.Parent = MainScrollFrame
+bmm2.Name = "mm2"
+bmm2.Size = UDim2.new(1, 0, 0.1, 0)
+bmm2.Position = UDim2.new(0.05, 0, 0, 0)
+bmm2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bmm2.BackgroundTransparency = 0
+bmm2.Text = "mm2"
+bmm2.TextColor3 = Color3.fromRGB(0, 0, 0)
+bmm2.TextSize = 14
+bmm2.Font = Enum.Font.SourceSansBold
+bmm2.TextXAlignment = Enum.TextXAlignment.Center
+bmm2.TextYAlignment = Enum.TextYAlignment.Center
+bmm2.AutoButtonColor = true
+bmm2.BorderSizePixel = 0
+bmm2.LayoutOrder = 1.5
+bmm2.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/s/69a95244dd16cd9363554d73.lua"))()
+end)
+
+local bWaapp = Instance.new("TextButton")
+bWaapp.Parent = MainScrollFrame
+bWaapp.Name = "Waapp"
+bWaapp.Size = UDim2.new(1, 0, 0.1, 0)
+bWaapp.Position = UDim2.new(0.05, 0, 0, 0)
+bWaapp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bWaapp.BackgroundTransparency = 0
+bWaapp.Text = "Work At A Pizza Place"
+bWaapp.TextColor3 = Color3.fromRGB(0, 0, 0)
+bWaapp.TextSize = 14
+bWaapp.Font = Enum.Font.SourceSansBold
+bWaapp.TextXAlignment = Enum.TextXAlignment.Center
+bWaapp.TextYAlignment = Enum.TextYAlignment.Center
+bWaapp.AutoButtonColor = true
+bWaapp.BorderSizePixel = 0
+bWaapp.LayoutOrder = 1.5
+bWaapp.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/206903/scripts/Pizza%20Hub%202.lua"))()
+end)
+
+local bbladballer = Instance.new("TextButton")
+bbladballer.Parent = MainScrollFrame
+bbladballer.Name = "bladballer"
+bbladballer.Size = UDim2.new(1, 0, 0.1, 0)
+bbladballer.Position = UDim2.new(0.05, 0, 0, 0)
+bbladballer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bbladballer.BackgroundTransparency = 0
+bbladballer.Text = "Blade Ball"
+bbladballer.TextColor3 = Color3.fromRGB(0, 0, 0)
+bbladballer.TextSize = 14
+bbladballer.Font = Enum.Font.SourceSansBold
+bbladballer.TextXAlignment = Enum.TextXAlignment.Center
+bbladballer.TextYAlignment = Enum.TextYAlignment.Center
+bbladballer.AutoButtonColor = true
+bbladballer.BorderSizePixel = 0
+bbladballer.LayoutOrder = 1.5
+bbladballer.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/200089/scripts/blade-ball-autoparry.lua"))()
+end)
+
+local binkgame = Instance.new("TextButton")
+binkgame.Parent = MainScrollFrame
+binkgame.Name = "inkgame"
+binkgame.Size = UDim2.new(1, 0, 0.1, 0)
+binkgame.Position = UDim2.new(0.05, 0, 0, 0)
+binkgame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+binkgame.BackgroundTransparency = 0
+binkgame.Text = "Ink Game / Squide Game"
+binkgame.TextColor3 = Color3.fromRGB(0, 0, 0)
+binkgame.TextSize = 14
+binkgame.Font = Enum.Font.SourceSansBold
+binkgame.TextXAlignment = Enum.TextXAlignment.Center
+binkgame.TextYAlignment = Enum.TextYAlignment.Center
+binkgame.AutoButtonColor = true
+binkgame.BorderSizePixel = 0
+binkgame.LayoutOrder = 1.5
+binkgame.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/204167/scripts/ink%20game.lua"))()
+end)
+
+local bgag = Instance.new("TextButton")
+bgag.Parent = MainScrollFrame
+bgag.Name = "gag"
+bgag.Size = UDim2.new(1, 0, 0.1, 0)
+bgag.Position = UDim2.new(0.05, 0, 0, 0)
+bgag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bgag.BackgroundTransparency = 0
+bgag.Text = "Grow A Garden"
+bgag.TextColor3 = Color3.fromRGB(0, 0, 0)
+bgag.TextSize = 14
+bgag.Font = Enum.Font.SourceSansBold
+bgag.TextXAlignment = Enum.TextXAlignment.Center
+bgag.TextYAlignment = Enum.TextYAlignment.Center
+bgag.AutoButtonColor = true
+bgag.BorderSizePixel = 0
+bgag.LayoutOrder = 1.5
+bgag.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/200814/scripts/gag%20script.lua"))()
+end)
+
+local bBrookheaven = Instance.new("TextButton")
+bBrookheaven.Parent = MainScrollFrame
+bBrookheaven.Name = "Brookheaven"
+bBrookheaven.Size = UDim2.new(1, 0, 0.1, 0)
+bBrookheaven.Position = UDim2.new(0.05, 0, 0, 0)
+bBrookheaven.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bBrookheaven.BackgroundTransparency = 0
+bBrookheaven.Text = "BrookHaven"
+bBrookheaven.TextColor3 = Color3.fromRGB(0, 0, 0)
+bBrookheaven.TextSize = 14
+bBrookheaven.Font = Enum.Font.SourceSansBold
+bBrookheaven.TextXAlignment = Enum.TextXAlignment.Center
+bBrookheaven.TextYAlignment = Enum.TextYAlignment.Center
+bBrookheaven.AutoButtonColor = true
+bBrookheaven.BorderSizePixel = 0
+bBrookheaven.LayoutOrder = 1.5
+bBrookheaven.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/200522/scripts/Brookhaven%20Roblox%20Script.lua"))()
 end)
 
 local tInfoorGui = Instance.new("TextLabel")
@@ -692,6 +967,26 @@ bContrlgui.BorderSizePixel = 0
 bContrlgui.LayoutOrder = 2
 bContrlgui.Activated:Connect(function()
 	controlgui()
+end)
+
+local bAntiAFK = Instance.new("TextButton")
+bAntiAFK.Parent = MainScrollFrame
+bAntiAFK.Name = "openAntiAFK"
+bAntiAFK.Size = UDim2.new(1, 0, 0.1, 0)
+bAntiAFK.Position = UDim2.new(0.05, 0, 0, 0)
+bAntiAFK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bAntiAFK.BackgroundTransparency = 0
+bAntiAFK.Text = "Open Anti AFK"
+bAntiAFK.TextColor3 = Color3.fromRGB(0, 0, 0)
+bAntiAFK.TextSize = 14
+bAntiAFK.Font = Enum.Font.SourceSansBold
+bAntiAFK.TextXAlignment = Enum.TextXAlignment.Center
+bAntiAFK.TextYAlignment = Enum.TextYAlignment.Center
+bAntiAFK.AutoButtonColor = true
+bAntiAFK.BorderSizePixel = 0
+bAntiAFK.LayoutOrder = 2
+bAntiAFK.Activated:Connect(function()
+	loadstring(game:HttpGet("https://obj.wearedevs.net/69322/scripts/Simple%20Anti-AFK%20Script.lua"))()
 end)
 
 local tInfoGui = Instance.new("TextLabel")
