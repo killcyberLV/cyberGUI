@@ -73,7 +73,7 @@ local godmode = false
 local GUI_WIDHT = 300
 local GUI_HEIGHT = 300
 local GUI_NAME = "CyberGui"
-local GUI_VERSION = "1.5.1"
+local GUI_VERSION = "1.6.1"
 local GUI_AUTHOR = "BroomLegion"
 local GUI_LICENSE = "CyberGui Legion"
 local GUI_UPDATE_LOG = "Added a lot"
@@ -579,6 +579,26 @@ bFly.Activated:Connect(function()
 	loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Fly.lua"))()
 end)
 
+local bCyberExplorer = Instance.new("TextButton")
+bCyberExplorer.Parent = MainScrollFrame
+bCyberExplorer.Name = "CyberExplorer"
+bCyberExplorer.Size = UDim2.new(1, 0, 0.1, 0)
+bCyberExplorer.Position = UDim2.new(1, 0, 0, 0)
+bCyberExplorer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bCyberExplorer.BackgroundTransparency = 0
+bCyberExplorer.Text = "CyberExplorer"
+bCyberExplorer.TextColor3 = Color3.fromRGB(0, 0, 0)
+bCyberExplorer.TextSize = 14
+bCyberExplorer.Font = Enum.Font.SourceSansBold
+bCyberExplorer.TextXAlignment = Enum.TextXAlignment.Center
+bCyberExplorer.TextYAlignment = Enum.TextYAlignment.Center
+bCyberExplorer.AutoButtonColor = true
+bCyberExplorer.BorderSizePixel = 0
+bCyberExplorer.LayoutOrder = 1
+bCyberExplorer.Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/killcyberLV/cyberGUI/main/CyberExplorer.lua"))
+end)
+
 local bEsp = Instance.new("TextButton")
 bEsp.Parent = MainScrollFrame
 bEsp.Name = "Esp"
@@ -929,6 +949,27 @@ tInfoorGui.TextYAlignment = Enum.TextYAlignment.Center
 tInfoorGui.BorderSizePixel = 0
 tInfoorGui.LayoutOrder = 2
 
+
+local bCyberGui1 = Instance.new("TextButton")
+bCyberGui1.Parent = MainScrollFrame
+bCyberGui1.Name = "openCyberGui1"
+bCyberGui1.Size = UDim2.new(1, 0, 0.1, 0)
+bCyberGui1.Position = UDim2.new(0.05, 0, 0, 0)
+bCyberGui1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bCyberGui1.BackgroundTransparency = 0
+bCyberGui1.Text = "Open Cyber Gui 1"
+bCyberGui1.TextColor3 = Color3.fromRGB(0, 0, 0)
+bCyberGui1.TextSize = 14
+bCyberGui1.Font = Enum.Font.SourceSansBold
+bCyberGui1.TextXAlignment = Enum.TextXAlignment.Center
+bCyberGui1.TextYAlignment = Enum.TextYAlignment.Center
+bCyberGui1.AutoButtonColor = true
+bCyberGui1.BorderSizePixel = 0
+bCyberGui1.LayoutOrder = 2
+bCyberGui1.Activated:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/killcyberLV/cyberGUI/main/CyberGui1.lua", true))()
+end)
+
 local tpguib = Instance.new("TextButton")
 tpguib.Parent = MainScrollFrame
 tpguib.Name = "openTpGui"
@@ -1004,26 +1045,6 @@ tInfoGui.TextXAlignment = Enum.TextXAlignment.Center
 tInfoGui.TextYAlignment = Enum.TextYAlignment.Center
 tInfoGui.BorderSizePixel = 0
 tInfoGui.LayoutOrder = 3
-
-local bCyberGui1 = Instance.new("TextButton")
-bCyberGui1.Parent = MainScrollFrame
-bCyberGui1.Name = "openCyberGui1"
-bCyberGui1.Size = UDim2.new(1, 0, 0.1, 0)
-bCyberGui1.Position = UDim2.new(0.05, 0, 0, 0)
-bCyberGui1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-bCyberGui1.BackgroundTransparency = 0
-bCyberGui1.Text = "Open Cyber Gui 1"
-bCyberGui1.TextColor3 = Color3.fromRGB(0, 0, 0)
-bCyberGui1.TextSize = 14
-bCyberGui1.Font = Enum.Font.SourceSansBold
-bCyberGui1.TextXAlignment = Enum.TextXAlignment.Center
-bCyberGui1.TextYAlignment = Enum.TextYAlignment.Center
-bCyberGui1.AutoButtonColor = true
-bCyberGui1.BorderSizePixel = 0
-bCyberGui1.LayoutOrder = 3
-bCyberGui1.Activated:Connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/killcyberLV/cyberGUI/main/CyberGui1.lua", true))()
-end)
 
 local bCoolClanGui = Instance.new("TextButton")
 bCoolClanGui.Parent = MainScrollFrame
