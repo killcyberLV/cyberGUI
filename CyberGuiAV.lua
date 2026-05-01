@@ -1,4 +1,14 @@
 local player = game.Players.LocalPlayer
+local PlayerGui = player:WaitForChild("PlayerGui")
+
+local GUI_NAME = "CyberGui"
+
+local old = PlayerGui:FindFirstChild(GUI_NAME)
+if old then
+	old:Destroy()
+end
+
+local player = game.Players.LocalPlayer
 local gui = player:WaitForChild("PlayerGui")
 
 local time = 3
@@ -532,26 +542,6 @@ tInfoGeneral.TextXAlignment = Enum.TextXAlignment.Center
 tInfoGeneral.TextYAlignment = Enum.TextYAlignment.Center
 tInfoGeneral.BorderSizePixel = 0
 tInfoGeneral.LayoutOrder = 0
-
-local bclose = Instance.new("TextButton")
-bclose.Parent = MainScrollFrame
-bclose.Name = "Noclip"
-bclose.Size = UDim2.new(1, 0, 0.1, 0)
-bclose.Position = UDim2.new(0.05, 0, 0, 0)
-bclose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-bclose.BackgroundTransparency = 0
-bclose.Text = "Noclip"
-bclose.TextColor3 = Color3.fromRGB(0, 0, 0)
-bclose.TextSize = 14
-bclose.Font = Enum.Font.SourceSansBold
-bclose.TextXAlignment = Enum.TextXAlignment.Center
-bclose.TextYAlignment = Enum.TextYAlignment.Center
-bclose.AutoButtonColor = true
-bclose.BorderSizePixel = 0
-bclose.LayoutOrder = 1
-bclose.Activated:Connect(function()
-	mainGui:Destoy()
-end
 		
 local bnoclip = Instance.new("TextButton")
 bnoclip.Parent = MainScrollFrame
